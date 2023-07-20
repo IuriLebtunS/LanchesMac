@@ -18670,8 +18670,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Categoria/_CadastradoComSucesso.cshtml",
+      "TargetPath": "Views\\Categoria\\_CadastradoComSucesso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Lanche/_CadastradoComSucesso.cshtml",
+      "TargetPath": "Views\\Lanche\\_CadastradoComSucesso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Lanche/Create.cshtml",
+      "TargetPath": "Views\\Lanche\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

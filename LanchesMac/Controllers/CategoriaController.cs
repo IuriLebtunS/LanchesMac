@@ -18,7 +18,7 @@ namespace LanchesMac.Controllers
         public async Task<IActionResult> List()
         {
             var lista = await _context.Categorias.ToListAsync();
-            return View();
+            return View(lista);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -34,17 +34,16 @@ namespace LanchesMac.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Categoria categorias)
+        public async Task<IActionResult> Create(string categoriaNome, string descricao)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(categorias);
-                await _context.SaveChangesAsync();
+            var categoria = new Categoria(categoriaNome, descricao);
 
-                return RedirectToAction(nameof(Index));
-            }
+            await _context.Categorias.AddAsync(categoria);
 
-            return View(categorias);
+            await _context.SaveChangesAsync();
+
+            return View("_CadastradoComSucesso");
+            
         }
 
         public async Task<IActionResult> Edit(int id)

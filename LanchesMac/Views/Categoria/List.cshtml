@@ -1,1 +1,10 @@
+@model List<Categoria>
+
 <h1>Categorias Lanches</h1>
+
+<div>
+    @foreach (var item in Model)
+    {
+        @item.CategoriaNome
+    }
+</div>

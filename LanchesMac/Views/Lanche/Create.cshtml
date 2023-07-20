@@ -1,0 +1,34 @@
+<h1>Criar Lanche</h1>
+
+<Form asp-action="Create" asp-controller="Lanche" method="post">
+    <span>Nome:</span>
+    <input type="text" name="nome">
+
+    <select class="form-select" name="categoria" asp-items='(SelectList) ViewData["listaDeCategorias"]'>
+        <option value="">Escolha uma categoria</option>
+    </select>
+
+    <span>Descricao Curta:</span>
+    <input type="text" name="descricaoCurta">
+
+    <span>Descricao Detalhada:</span>
+    <input type="text" name="descricaoDetalhada">
+
+    <span>Preco:</span>
+    <input type="number" name="preco">
+
+    <span>Imagem:</span>
+    <input type="text" name="imagemUrl">
+
+    <span>Imagem da Thumbnail:</span>
+    <input type="text" name="imagemThumbnailUrl ">
+
+    <span>Lanche Preferido:</span>
+    <input type="checkbox" name="isLanchePreferido">
+
+    <span>Em Estoque:</span>
+    <input type="checkbox" name="emEstoque">
+
+    <button type="submit">Criar Lanche</button>
+
+</Form>

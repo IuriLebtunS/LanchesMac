@@ -6,6 +6,20 @@ namespace LanchesMac.Models
     [Table("Lanches")]
     public class Lanche
     {
+        public Lanche(string nome, string descricaoCurta, string descricaoDetalhada, decimal preco, string imagemUrl, string imagemThumbnailUrl, bool isLanchePreferido, bool emEstoque, int categoriaId)
+        {
+            Nome = nome;
+            DescricaoCurta = descricaoCurta;
+            DescricaoDetalhada = descricaoDetalhada;
+            Preco = preco;
+            ImagemUrl = imagemUrl; 
+            ImagemThumbnailUrl = imagemThumbnailUrl;
+            IsLanchePreferido = isLanchePreferido;
+            EmEstoque = emEstoque;
+            CategoriaId = categoriaId;
+            
+        }
+        
         [Key]
         public int LancheId { get; set; }
 
