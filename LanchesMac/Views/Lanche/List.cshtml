@@ -1,0 +1,28 @@
+@model List<Lanche>
+
+<h1>Categorias </h1>
+
+
+@foreach (var item in Model)
+{
+    <table class="table">
+        <thead>
+            <th>
+                @item.Nome
+            </th>
+            <th>
+                @item.DescricaoCurta
+            </th>
+            <th>
+                @item.DescricaoDetalhada
+            </th>
+            <th>
+                @item.ImagemUrl
+            </th>
+            <th>
+                @item.ImagemThumbnailUrl
+            </th>
+        </thead>
+    </table>
+}
+

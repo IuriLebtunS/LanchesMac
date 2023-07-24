@@ -37,8 +37,8 @@ public class LancheController : Controller
 
     public async Task<IActionResult> List()
     {
-        var lista = await _context.Lanches.ToListAsync();
-        return View();
+        var lanche = await _context.Lanches.ToListAsync();
+        return View(lanche);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
