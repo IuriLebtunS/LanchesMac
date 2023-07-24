@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets/LanchesMac.bundle.scp.css"
     },
     {
+      "Id": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
       "Id": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
       "Id": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/wwwroot/images/.DS_Store",
+      "PackagePath": "staticwebassets/images/.DS_Store"
     },
     {
       "Id": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/wwwroot/images/carousel11.jpg",

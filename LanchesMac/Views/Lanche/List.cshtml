@@ -1,28 +1,17 @@
 @model List<Lanche>
 
-<h1>Categorias </h1>
+<div>
+    <h2>Todos Lanches</h2>
+</div>
 
 
-@foreach (var item in Model)
+@foreach (var lanche in Model)
 {
-    <table class="table">
-        <thead>
-            <th>
-                @item.Nome
-            </th>
-            <th>
-                @item.DescricaoCurta
-            </th>
-            <th>
-                @item.DescricaoDetalhada
-            </th>
-            <th>
-                @item.ImagemUrl
-            </th>
-            <th>
-                @item.ImagemThumbnailUrl
-            </th>
-        </thead>
-    </table>
+    <div>
+        <br>
+        <h4>@lanche.Nome</h4>
+        <p><img src="@lanche.ImagemUrl" height="200" width="200"></p>
+        <h3>Preço: @lanche.Preco.ToString("c")</h3>
+    </div>
 }
 

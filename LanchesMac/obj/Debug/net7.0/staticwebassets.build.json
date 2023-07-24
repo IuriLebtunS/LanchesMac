@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/y22H2e1EiT2s+/CnPRzXarjgOOQKPd2PHbVCV9yIdI=",
+  "Hash": "/bSpXEOjf8IofRVCI4upUJ+XF5VKRlLjnVnh34Tx3Fo=",
   "Source": "LanchesMac",
   "BasePath": "_content/LanchesMac",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/obj/Debug/net7.0/scopedcss/projectbundle/LanchesMac.bundle.scp.css"
     },
     {
+      "Identity": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/wwwroot/.DS_Store",
+      "SourceId": "LanchesMac",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/wwwroot/",
+      "BasePath": "_content/LanchesMac",
+      "RelativePath": ".DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.DS_Store"
+    },
+    {
       "Identity": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/wwwroot/css/site.css",
       "SourceId": "LanchesMac",
       "SourceType": "Discovered",
@@ -83,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/wwwroot/images/.DS_Store",
+      "SourceId": "LanchesMac",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/wwwroot/",
+      "BasePath": "_content/LanchesMac",
+      "RelativePath": "images/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/.DS_Store"
     },
     {
       "Identity": "/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/wwwroot/images/carousel11.jpg",
