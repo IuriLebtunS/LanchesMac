@@ -34,10 +34,8 @@ namespace LanchesMac.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(string categoriaNome, string descricao)
+        public async Task<IActionResult> Create(Categoria categoria)
         {
-            var categoria = new Categoria(categoriaNome, descricao);
-
             await _context.Categorias.AddAsync(categoria);
 
             await _context.SaveChangesAsync();
@@ -48,12 +46,12 @@ namespace LanchesMac.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            var publicador = await _context.Categorias.FindAsync(id);
+            var categoria = await _context.Categorias.FindAsync(id);
 
-            if (publicador == null)
+            if (categoria == null)
                 return NotFound();
 
-            return View(publicador);
+            return View(categoria);
         }
 
         [HttpPost]

@@ -5,11 +5,6 @@ namespace LanchesMac.Models
 {
     public class Categoria
     {
-        public Categoria(string categoriaNome, string descricao)
-        {
-            CategoriaNome = categoriaNome;
-            Descricao = descricao;
-        }
         [Key]
         public int CategoriaId { get; set; }
 

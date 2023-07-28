@@ -18,6 +18,7 @@ public class LancheController : Controller
     {
         var categorias = await _context.Categorias.ToListAsync();
 
+
         ViewData["ListaDeCategorias"] = new SelectList(categorias, "CategoriaId", "CategoriaNome");
 
         return View();

@@ -1,8 +1,11 @@
 <h1>Criar Lanche</h1>
+<hr>
 
 <Form asp-action="Create" asp-controller="Lanche" method="post">
-    <span>Nome:</span>
-    <input type="text" name="nome">
+    <div class="mb-3">
+        <label class="form-label">Nome:</label>
+        <input class="form-control" name="Nome">
+    </div>
 
     <select class="form-select" name="lanche" asp-items='(SelectList) ViewData["listaDeCategorias"]'>
         <option value="">Escolha um lanche</option>
