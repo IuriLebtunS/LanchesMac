@@ -4,12 +4,17 @@
 <a asp-action="Create" class="btn btn-success">Criar Categoria</a>
 <hr>
 
+
 <ol class="list-group">
     @foreach (var cat in Model)
     {
         <li class="list-group-item">
             @cat.CategoriaNome
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a asp-action="Edit" asp-route-Id="@cat.CategoriaId" class="btn btn-success">Editar</a>
+                <a asp-action="Delete" asp-route-Id="@cat.CategoriaId" class="btn btn-danger">Apagar</a>
+            </div>
         </li>
-    }
 
+    }
 </ol>

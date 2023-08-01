@@ -34,17 +34,22 @@ namespace LanchesMac.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Categoria categoria)
+        public async Task<IActionResult> Create(Categoria model)
         {
-            await _context.Categorias.AddAsync(categoria);
+            if (!ModelState.IsValid)
+                return View(model);
+
+
+            await _context.Categorias.AddAsync(model);
 
             await _context.SaveChangesAsync();
 
             return View("_CadastradoComSucesso");
-            
-        }
 
-        public async Task<IActionResult> Edit(int id)
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult>Edit(int id)
         {
             var categoria = await _context.Categorias.FindAsync(id);
 
@@ -56,40 +61,38 @@ namespace LanchesMac.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Categoria categorias)
-
+        public async Task<IActionResult>Edit(Categoria model)
         {
             if (ModelState.IsValid)
             {
-                _context.Update(categorias);
+                _context.Update(model);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(List));
             }
-            return View(categorias);
+            return View();
         }
-
-        public async Task<IActionResult> Delete(int id)
+        [HttpGet]
+        public async Task<IActionResult>Delete(int id)
         {
-            var publicador = await _context.Categorias.FirstOrDefaultAsync(m => m.CategoriaId == id);
+            var categoria = await _context.Categorias.FirstOrDefaultAsync(m => m.CategoriaId == id);
 
-            if (publicador == null)
+            if (categoria == null)
                 return NotFound();
 
-            return View(publicador);
+            return View(categoria);
         }
 
-        [HttpPost, ValidateAntiForgeryToken, ActionName("Delete")]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        [HttpPost]
+        public async Task<IActionResult>DeleteConfirmed(Categoria model)
         {
-            var categoria = await _context.Categorias.FindAsync(id);
-
-            _context.Categorias.Remove(categoria);
+            
+            _context.Categorias.Remove(model);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(List));
         }
-
+        
     }
-    
+
 }

@@ -1,0 +1,10 @@
+@model Categoria;
+<h1>Apagar categoria @Model.CategoriaNome</h1>
+
+<p>Voce realmente deseja apagar essa categoria?</p>
+
+<form asp-action="DeleteConfirmed" asp-controller="Categoria" method="post">
+    <input type="hidden" asp-for="CategoriaId"/>
+    <button class="btn btn-danger">Confirmar</button>
+    <a asp-action="List" asp-controller="Categoria" class="btn btn-secondary">Cancelar</a>
+</form>

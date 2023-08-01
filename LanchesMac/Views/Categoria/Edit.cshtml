@@ -1,0 +1,24 @@
+@model Categoria;
+
+<h1>Editar Categoria</h1>
+<hr>
+
+<Form asp-action="Edit" asp-controller="Categoria" method="post">
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="CategoriaNome">Nome: </label>
+        <input class="form-control" asp-for="CategoriaNome">
+        <span class= "text-danger"asp-validation-for="CategoriaNome"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label"asp-for="Descricao">descricao:</label>
+        <input class="form-control" asp-for="Descricao">
+        <span class="text-danger" asp-validation-for="Descricao"></span>
+    </div>
+
+    <button class="btn btn-primary">Salvar</button> 
+    <a asp-action="List" asp-controller="Categoria" class="btn btn-secondary">Voltar</a>
+    <input type="hidden" asp-for="CategoriaId" />
+    
+</Form>
