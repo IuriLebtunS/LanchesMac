@@ -1,3 +1,5 @@
+@model Lanche;
+
 <h1>Criar Lanche</h1>
 <hr>
 
@@ -6,32 +8,55 @@
         <label class="form-label">Nome:</label>
         <input class="form-control" name="Nome">
     </div>
+    <br>
 
     <select class="form-select" name="lanche" asp-items='(SelectList) ViewData["listaDeCategorias"]'>
-        <option value="">Escolha um lanche</option>
+        <option value="">Escolha uma Categoria</option>
     </select>
+    <br>
 
-    <span>Descricao Curta:</span>
-    <input type="text" name="descricaoCurta">
+    <div class="mb-3">
+        <label class="form-label">Descrição Curta:</label>
+        <input class="form-control"descricaoCurta">
+    </div>
+    <br>
 
-    <span>Descricao Detalhada:</span>
-    <input type="text" name="descricaoDetalhada">
+    <div>
+        <label class="form-label">Descricao Detalhada:</label>
+        <input class="form-control"descricaoDetalhada">
+    </div>
+    <br>
 
-    <span>Preco:</span>
-    <input type="number" name="preco">
+    <div class="mb-3">
+        <label class="form-label">Preço:</label>
+        <input type="number" name="Preco">
+    </div>
+    <br>
 
-    <span>Imagem:</span>
-    <input type="text" name="imagemUrl">
+    <div class="mb-3">
+        <label class="form-label">Imagem:</label>
+        <input type="text" name="ImagemUrl">
+    </div>
+    <br>
 
-    <span>Imagem da Thumbnail:</span>
-    <input type="text" name="imagemThumbnailUrl ">
+    <div class="mb-3">
+        <label class="form-label">Imagem da Thumbnail:</label>
+        <input type="text" name="ImagemThumbnailUrl">
+    </div>
+    <br>
 
-    <span>Lanche Preferido:</span>
-    <input type="checkbox" name="isLanchePreferido">
+    <div class="mb-3">
+        <label class="form-label">Lanche Preferido:</label>
+        <input type="checkbox" name="IsLanchePreferido">
+    </div>
+    <br>
 
-    <span>Em Estoque:</span>
-    <input type="checkbox" name="emEstoque">
+    <div class="mb-3">
+        <label class="form-label">Em Estoque:</label>
+        <input type="checkbox" name="EmEstoque">
+    </div>
+    <br>
 
-    <button type="submit">Criar Lanche</button>
+    <button type="submit"class="btn btn-success">Criar Lanche</button>
 
 </Form>

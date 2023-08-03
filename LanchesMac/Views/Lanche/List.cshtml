@@ -1,8 +1,8 @@
 @model List<Lanche>
 
-<div>
-    <h2>Todos Lanches</h2>
-</div>
+<h1>Nossos Lanches</h1>
+<a asp-action="Create" class="btn btn-success">Criar Lanche</a>
+<hr>
 
 
 @foreach (var lanche in Model)
@@ -12,6 +12,13 @@
         <h4>@lanche.Nome</h4>
         <p><img src="@lanche.ImagemUrl" height="200" width="200"></p>
         <h3>Preço: @lanche.Preco.ToString("c")</h3>
+        <br>
+
+         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a asp-action="Edit" asp-route-Id="@lanche.LancheId" class="btn btn-success">Editar</a>
+            <a asp-action="Delete" asp-route-Id="@lanche.LancheId" class="btn btn-danger">Apagar</a>
+        </div>
+       
     </div>
 }
 

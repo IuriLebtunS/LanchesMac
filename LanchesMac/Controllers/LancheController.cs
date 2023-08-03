@@ -14,9 +14,15 @@ public class LancheController : Controller
         _context = context;
     }
 
+    public async Task<IActionResult> List()
+    {
+        var lanches = await _context.Lanches.ToListAsync();
+        return View(lanches);
+    }
+
     public async Task<IActionResult> Create()
     {
-        var categorias = await _context.Categorias.ToListAsync();
+        var categorias = await _context.Lanches.ToListAsync();
 
 
         ViewData["ListaDeCategorias"] = new SelectList(categorias, "CategoriaId", "CategoriaNome");
@@ -25,26 +31,60 @@ public class LancheController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(string nome, string descricaoCurta, string descricaoDetalhada, decimal preco,string imagemUrl,string imagemThumbnailUrl,bool isLanchePreferido, bool emEstoque,int categoria)
+    public async Task<IActionResult> Create(Lanche model)
     {
-        var lanche = new Lanche(nome, descricaoCurta,descricaoDetalhada,preco,imagemUrl,imagemThumbnailUrl,isLanchePreferido,emEstoque, categoria);
+        if (!ModelState.IsValid)
+            return View(model);
 
-        await _context.Lanches.AddAsync(lanche);
 
+        await _context.Lanches.AddAsync(model);
+
+        await _context.SaveChangesAsync();
+
+        return View("_CadastradoComSucesso");
+    }
+
+    public async Task<IActionResult> Edit(int id)
+    {
+        var categoria = await _context.Lanches.FindAsync(id);
+
+        if (categoria == null)
+            return NotFound();
+
+        return View(categoria);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(Categoria model)
+    {
+        if (ModelState.IsValid)
+        {
+            _context.Update(model);
             await _context.SaveChangesAsync();
 
-            return View("_CadastradoComSucesso");
+            return RedirectToAction(nameof(List));
+        }
+        return View();
+    }
+    public async Task<IActionResult> Delete(int id)
+    {
+        var categoria = await _context.Categorias.FirstOrDefaultAsync(m => m.CategoriaId == id);
+
+        if (categoria == null)
+            return NotFound();
+
+        return View(categoria);
     }
 
-    public async Task<IActionResult> List()
+    [HttpPost]
+    public async Task<IActionResult> DeleteConfirmed(Categoria model)
     {
-        var lanche = await _context.Lanches.ToListAsync();
-        return View(lanche);
+
+        _context.Categorias.Remove(model);
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction(nameof(List));
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
 }

@@ -44,6 +44,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGFuY2hlL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Lanche/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGFuY2hlL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Lanche/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGFuY2hlL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Lanche/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGFuY2hlL0xpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

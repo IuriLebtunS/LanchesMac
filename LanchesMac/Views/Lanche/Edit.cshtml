@@ -1,0 +1,55 @@
+@model Lanche;
+
+<h1>Editar Lanche</h1>
+<hr>
+
+<Form asp-action="Edit" asp-controller="Lanche" method="post">
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="Nome">Nome: </label>
+        <input class="form-control" asp-for="Nome">
+        <span class= "text-danger"asp-validation-for="Nome"></span>
+    </div>
+    <br>
+
+    <div class="mb-3">
+        <label class="form-label"asp-for="DescricaoCurta">Descricao Curta:</label>
+        <input class="form-control" asp-for="DescricaoCurta">
+        <span class="text-danger" asp-validation-for="DescricaoCurta"></span>
+    </div>
+    <br>
+
+
+    <div class="mb-3">
+        <label class="form-label"asp-for="DescricaoDetalhada">Descricao Detalhada:</label>
+        <input class="form-control" asp-for="DescricaoDetalhada">
+        <span class="text-danger" asp-validation-for="DescricaoDetalhada"></span>
+    </div>
+    <br>
+
+     <div class="mb-3">
+        <label class="form-label"asp-for="Preco">Preco:</label>
+        <input class="form-control" asp-for="Preco">
+        <span class="text-danger" asp-validation-for="Preco"></span>
+    </div>
+    <br>
+
+     <div class="mb-3">
+        <label class="form-label"asp-for="ImagemUrl">Imagem:</label>
+        <input class="form-control" asp-for="ImagemUrl">
+        <span class="text-danger" asp-validation-for="ImagemUrl"></span>
+    </div>
+    <br>
+
+     <div class="mb-3">
+        <label class="form-label"asp-for="ImagemThumbnailUrl">Imagem da Thumbnail:</label>
+        <input class="form-control" asp-for="ImagemThumbnailUrl">
+        <span class="text-danger" asp-validation-for="ImagemThumbnailUrl"></span>
+    </div>
+    <br>
+
+    <button class="btn btn-primary">Salvar</button> 
+    <a asp-action="List" asp-controller="Lanche" class="btn btn-secondary">Voltar</a>
+    <input type="hidden" asp-for="LancheId"/>
+    
+</Form>

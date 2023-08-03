@@ -1,0 +1,11 @@
+@model Lanche;
+
+<h1>Apagar Lanche @Model.Nome</h1>
+<hr>
+<p>Voce realmente deseja apagar esse Lanche?</p>
+<br>
+<form asp-action="DeleteConfirmed" asp-controller="Lanche" method="post">
+    <input type="hidden" asp-for="LancheId" />
+    <button class="btn btn-danger">Confirmar</button>
+    <a asp-action="List" asp-controller="Lanche" class="btn btn-secondary">Cancelar</a>
+</form>
