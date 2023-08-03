@@ -22,36 +22,32 @@ public class LancheController : Controller
 
     public async Task<IActionResult> Create()
     {
-        var categorias = await _context.Lanches.ToListAsync();
-
-
-        ViewData["ListaDeCategorias"] = new SelectList(categorias, "CategoriaId", "CategoriaNome");
-
+        ViewData["ListaDeLanches"] = new SelectList(await _context.Lanches.ToListAsync(), "LancheId", "Nome");
         return View();
     }
 
     [HttpPost]
     public async Task<IActionResult> Create(Lanche model)
     {
-        if (!ModelState.IsValid)
-            return View(model);
-
-
+        if (ModelState.IsValid)
+    {
         await _context.Lanches.AddAsync(model);
-
         await _context.SaveChangesAsync();
-
         return View("_CadastradoComSucesso");
+    }
+
+    ViewData["ListaDeLanches"] = new SelectList(await _context.Lanches.ToListAsync(), "LancheId", "Nome");
+    return View(model);
     }
 
     public async Task<IActionResult> Edit(int id)
     {
-        var categoria = await _context.Lanches.FindAsync(id);
+        var lanches = await _context.Lanches.FindAsync(id);
 
-        if (categoria == null)
+        if (lanches == null)
             return NotFound();
 
-        return View(categoria);
+        return View(lanches);
     }
 
     [HttpPost]
