@@ -5,8 +5,8 @@
 
 <Form asp-action="Create" asp-controller="Lanche" method="post">
     <div class="mb-3">
-        <label class="form-label">Nome:</label>
-        <input class="form-control" name="Nome">
+        <label class="form-label"asp-for="Nome">Nome:</label>
+        <input class="form-control" asp-for="Nome">
     </div>
     <br>
 
@@ -16,8 +16,8 @@
     <br>
 
     <div class="mb-3">
-        <label class="form-label">Descrição Curta:</label>
-        <input class="form-control"descricaoCurta">
+        <label class="form-label"asp-for="descricaoCurta">Descrição Curta:</label>
+        <input class="form-control"descricaoCurta" asp-for="descricaoCurta">
     </div>
     <br>
 

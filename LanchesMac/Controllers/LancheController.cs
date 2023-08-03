@@ -22,7 +22,7 @@ public class LancheController : Controller
 
     public async Task<IActionResult> Create()
     {
-        ViewData["ListaDeLanches"] = new SelectList(await _context.Lanches.ToListAsync(), "LancheId", "Nome");
+        ViewData["listaDeCategorias"] = new SelectList(await _context.Categorias.ToListAsync(), "CategoriaId","CategoriaNome");
         return View();
     }
 
