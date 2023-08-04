@@ -33,7 +33,7 @@ public class LancheController : Controller
     {
         await _context.Lanches.AddAsync(model);
         await _context.SaveChangesAsync();
-        return View("_CadastradoComSucesso");
+        return RedirectToAction("List","Lanche");    
     }
 
     ViewData["ListaDeLanches"] = new SelectList(await _context.Lanches.ToListAsync(), "LancheId", "Nome");
@@ -52,7 +52,7 @@ public class LancheController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(Categoria model)
+    public async Task<IActionResult> Edit(Lanche model)
     {
         if (ModelState.IsValid)
         {
@@ -65,19 +65,19 @@ public class LancheController : Controller
     }
     public async Task<IActionResult> Delete(int id)
     {
-        var categoria = await _context.Categorias.FirstOrDefaultAsync(m => m.CategoriaId == id);
+        var lanches = await _context.Lanches.FirstOrDefaultAsync(m => m.LancheId == id);
 
-        if (categoria == null)
+        if (lanches == null)
             return NotFound();
 
-        return View(categoria);
+        return View(lanches);
     }
 
     [HttpPost]
-    public async Task<IActionResult> DeleteConfirmed(Categoria model)
+    public async Task<IActionResult> DeleteConfirmed(Lanche model)
     {
 
-        _context.Categorias.Remove(model);
+        _context.Lanches.Remove(model);
         await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(List));

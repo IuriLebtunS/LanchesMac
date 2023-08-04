@@ -7,56 +7,69 @@
     <div class="mb-3">
         <label class="form-label"asp-for="Nome">Nome:</label>
         <input class="form-control" asp-for="Nome">
+        <span class= "text-danger"asp-validation-for="Nome"></span>
+
     </div>
     <br>
 
-    <select class="form-select" name="lanche" asp-items='(SelectList) ViewData["listaDeCategorias"]'>
+    <select class="form-select" asp-for="CategoriaId" asp-items='(SelectList) ViewData["listaDeCategorias"]'>
         <option value="">Escolha uma Categoria</option>
+        <span class= "text-danger"asp-validation-for="CategoriaId"></span>
     </select>
     <br>
 
     <div class="mb-3">
-        <label class="form-label"asp-for="descricaoCurta">Descrição Curta:</label>
-        <input class="form-control"descricaoCurta" asp-for="descricaoCurta">
+        <label class="form-label"asp-for="DescricaoCurta">Descrição Curta:</label>
+        <input class="form-control" asp-for="DescricaoCurta">
+        <span class= "text-danger"asp-validation-for="DescricaoCurta"></span>
     </div>
     <br>
 
     <div>
         <label class="form-label">Descricao Detalhada:</label>
-        <input class="form-control"descricaoDetalhada">
+        <input class="form-control"asp-for="DescricaoDetalhada">
+        <span class= "text-danger"asp-validation-for="DescricaoDetalhada"></span>
     </div>
     <br>
+    <br>
+
 
     <div class="mb-3">
         <label class="form-label">Preço:</label>
-        <input type="number" name="Preco">
+        <input type="number" asp-for="Preco">
+        <span class= "text-danger"asp-validation-for="Preco"></span>
     </div>
     <br>
 
     <div class="mb-3">
         <label class="form-label">Imagem:</label>
-        <input type="text" name="ImagemUrl">
+        <input type="text" asp-for="ImagemUrl">
+        <span class= "text-danger"asp-validation-for="ImagemUrl"></span>
     </div>
     <br>
 
     <div class="mb-3">
         <label class="form-label">Imagem da Thumbnail:</label>
-        <input type="text" name="ImagemThumbnailUrl">
+        <input type="text" asp-for="ImagemThumbnailUrl">
+        <span class= "text-danger"asp-validation-for="ImagemThumbnailUrl"></span>
     </div>
     <br>
 
     <div class="mb-3">
         <label class="form-label">Lanche Preferido:</label>
-        <input type="checkbox" name="IsLanchePreferido">
+        <input type="checkbox" asp-for="IsLanchePreferido">
+        <span class= "text-danger"asp-validation-for="IsLanchePreferido"></span>
     </div>
     <br>
 
     <div class="mb-3">
         <label class="form-label">Em Estoque:</label>
-        <input type="checkbox" name="EmEstoque">
+        <input type="checkbox" asp-for="EmEstoque">
+        <span class= "text-danger"asp-validation-for="EmEstoque"></span>
     </div>
     <br>
 
-    <button type="submit"class="btn btn-success">Criar Lanche</button>
+    <button type="submit"class="btn btn-success"asp-for="">Criar Lanche</button>
 
 </Form>
+<div asp-validation-summary="All" class="text-danger"></div>
