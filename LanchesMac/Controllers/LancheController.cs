@@ -22,7 +22,7 @@ public class LancheController : Controller
 
     public async Task<IActionResult> Create()
     {
-        ViewData["listaDeCategorias"] = new SelectList(await _context.Categorias.ToListAsync(), "CategoriaId","CategoriaNome");
+        ViewData["listaDeCategorias"] = new SelectList(await _context.Categorias.ToListAsync(), "CategoriaId", "CategoriaNome");
         return View();
     }
 
@@ -30,23 +30,25 @@ public class LancheController : Controller
     public async Task<IActionResult> Create(Lanche model)
     {
         if (ModelState.IsValid)
-    {
-        await _context.Lanches.AddAsync(model);
-        await _context.SaveChangesAsync();
-        return RedirectToAction("List","Lanche");    
-    }
+        {
+            await _context.Lanches.AddAsync(model);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("List", "Lanche");
+        }
 
-    ViewData["ListaDeLanches"] = new SelectList(await _context.Lanches.ToListAsync(), "LancheId", "Nome");
-    return View(model);
+        ViewData["listaDeCategorias"] = new SelectList(await _context.Categorias.ToListAsync(), "CategoriaId", "CategoriaNome");
+        return View(model);
     }
 
     public async Task<IActionResult> Edit(int id)
     {
+
         var lanches = await _context.Lanches.FindAsync(id);
 
         if (lanches == null)
             return NotFound();
 
+        ViewData["listaDeCategorias"] = new SelectList(await _context.Categorias.ToListAsync(), "CategoriaId", "CategoriaNome");
         return View(lanches);
     }
 
@@ -61,6 +63,7 @@ public class LancheController : Controller
 
             return RedirectToAction(nameof(List));
         }
+        ViewData["listaDeCategorias"] = new SelectList(await _context.Categorias.ToListAsync(), "CategoriaId", "CategoriaNome");
         return View();
     }
     public async Task<IActionResult> Delete(int id)

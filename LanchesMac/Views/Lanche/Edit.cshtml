@@ -12,6 +12,12 @@
     </div>
     <br>
 
+    <select class="form-select" asp-for="CategoriaId" asp-items='(SelectList) ViewData["listaDeCategorias"]'>
+        <option value="">Escolha uma Categoria</option>
+    </select>
+    <span class= "text-danger"asp-validation-for="CategoriaId"></span>
+    <br>
+
     <div class="mb-3">
         <label class="form-label"asp-for="DescricaoCurta">Descricao Curta:</label>
         <input class="form-control" asp-for="DescricaoCurta">
