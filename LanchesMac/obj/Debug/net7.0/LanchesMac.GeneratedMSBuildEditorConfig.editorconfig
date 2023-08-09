@@ -36,6 +36,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcmlhL19DYWRhc3RyYWRvQ29tU3VjZXNzby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Despesa/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVzcGVzYS9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Despesa/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVzcGVzYS9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Despesa/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVzcGVzYS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Despesa/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVzcGVzYS9MaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Despesa/_CasdastroComSucesso.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVzcGVzYS9fQ2FzZGFzdHJvQ29tU3VjZXNzby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/iurilebtun/Documents/demo/LanchesMac/LanchesMac/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,19 @@
+@model List<Despesa>
+
+<h1>Estoque</h1>
+<a asp-action="Create" class="btn btn-success">Criar Despesa</a>
+<hr>
+
+
+<ol class="list-group">
+    @foreach (var despesa in Model)
+    {
+        <li class="list-group-item">
+            @despesa.Nome
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a asp-action="Edit" asp-route-Id="@despesa.DespesaId" class="btn btn-success">Editar</a>
+                <a asp-action="Delete" asp-route-Id="@despesa.DespesaId" class="btn btn-danger">Apagar</a>
+            </div>
+        </li>
+    }
+</ol>

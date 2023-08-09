@@ -39,12 +39,12 @@ namespace LanchesMac.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-
+            model.DataDespesa = DateTime.SpecifyKind(model.DataDespesa, DateTimeKind.Utc);            
             await _context.Despesas.AddAsync(model);
-
+ 
             await _context.SaveChangesAsync();
 
-            return View("_CadastradoComSucesso");
+            return RedirectToAction(nameof(List));
 
         }
         
@@ -65,6 +65,7 @@ namespace LanchesMac.Controllers
         {
             if (ModelState.IsValid)
             {
+                model.DataDespesa = DateTime.SpecifyKind(model.DataDespesa, DateTimeKind.Utc);            
                 _context.Update(model);
                 await _context.SaveChangesAsync();
 
@@ -75,7 +76,7 @@ namespace LanchesMac.Controllers
         [HttpGet]
         public async Task<IActionResult>Delete(int id)
         {
-            var despesa = await _context.Despesas.FirstOrDefaultAsync(m => m.CategoriaId == id);
+            var despesa = await _context.Despesas.FirstOrDefaultAsync(m => m.DespesaId == id);
 
             if (despesa == null)
                 return NotFound();

@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace LanchesMac.Migrations
 {
     /// <inheritdoc />
-    public partial class Despesa : Migration
+    public partial class Despesas : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,24 +22,12 @@ namespace LanchesMac.Migrations
                     DescricaoCurta = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
                     DescricaoDetalhada = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
                     Valor = table.Column<decimal>(type: "numeric(10,2)", nullable: false),
-                    DataDespesa = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    CategoriaId = table.Column<int>(type: "integer", nullable: false)
+                    DataDespesa = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Despesas", x => x.DespesaId);
-                    table.ForeignKey(
-                        name: "FK_Despesas_Categorias_CategoriaId",
-                        column: x => x.CategoriaId,
-                        principalTable: "Categorias",
-                        principalColumn: "CategoriaId",
-                        onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Despesas_CategoriaId",
-                table: "Despesas",
-                column: "CategoriaId");
         }
 
         /// <inheritdoc />

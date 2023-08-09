@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace LanchesMac.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230808201939_Despesa")]
-    partial class Despesa
+    [Migration("20230809154223_Despesas")]
+    partial class Despesas
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,9 +56,6 @@ namespace LanchesMac.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("DespesaId"));
 
-                    b.Property<int>("CategoriaId")
-                        .HasColumnType("integer");
-
                     b.Property<DateTime>("DataDespesa")
                         .HasColumnType("timestamp with time zone");
 
@@ -81,8 +78,6 @@ namespace LanchesMac.Migrations
                         .HasColumnType("decimal(10,2)");
 
                     b.HasKey("DespesaId");
-
-                    b.HasIndex("CategoriaId");
 
                     b.ToTable("Despesas");
                 });
@@ -133,17 +128,6 @@ namespace LanchesMac.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.ToTable("Lanches");
-                });
-
-            modelBuilder.Entity("LanchesMac.Models.Despesa", b =>
-                {
-                    b.HasOne("LanchesMac.Models.Categoria", "Categoria")
-                        .WithMany()
-                        .HasForeignKey("CategoriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Categoria");
                 });
 
             modelBuilder.Entity("LanchesMac.Models.Lanche", b =>

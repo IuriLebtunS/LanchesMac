@@ -36,7 +36,5 @@ namespace LanchesMac.Models
         [DataType(DataType.Date)]
         public DateTime DataDespesa { get; set; }
 
-        public int CategoriaId { get; set; }
-        public virtual Categoria Categoria { get; set; }
     }
 }
