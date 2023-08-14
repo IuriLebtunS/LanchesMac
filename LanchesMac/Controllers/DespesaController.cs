@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using LanchesMac.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LanchesMac.Controllers
 {
@@ -27,8 +28,9 @@ namespace LanchesMac.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewData["listadeCategorias"] = new SelectList(await _context.Categorias.ToListAsync(), "CategoriaId", "CategoriaNome");
             return View();
         }
 
@@ -39,33 +41,34 @@ namespace LanchesMac.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            model.DataDespesa = DateTime.SpecifyKind(model.DataDespesa, DateTimeKind.Utc);            
+            model.DataDespesa = DateTime.SpecifyKind(model.DataDespesa, DateTimeKind.Utc);
             await _context.Despesas.AddAsync(model);
- 
+
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(List));
 
         }
-        
+
         [HttpGet]
-        public async Task<IActionResult>Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
             var despesa = await _context.Despesas.FindAsync(id);
 
             if (despesa == null)
                 return NotFound();
 
+            ViewData["listadeCategorias"] = new SelectList(await _context.Categorias.ToListAsync(), "CategoriaId", "CategoriaNome");
             return View(despesa);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult>Edit(Despesa model)
+        public async Task<IActionResult> Edit(Despesa model)
         {
             if (ModelState.IsValid)
             {
-                model.DataDespesa = DateTime.SpecifyKind(model.DataDespesa, DateTimeKind.Utc);            
+                model.DataDespesa = DateTime.SpecifyKind(model.DataDespesa, DateTimeKind.Utc);
                 _context.Update(model);
                 await _context.SaveChangesAsync();
 
@@ -74,7 +77,7 @@ namespace LanchesMac.Controllers
             return View();
         }
         [HttpGet]
-        public async Task<IActionResult>Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var despesa = await _context.Despesas.FirstOrDefaultAsync(m => m.DespesaId == id);
 
@@ -85,15 +88,15 @@ namespace LanchesMac.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult>DeleteConfirmed(Despesa model)
+        public async Task<IActionResult> DeleteConfirmed(Despesa model)
         {
-            
+
             _context.Despesas.Remove(model);
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(List));
         }
-        
+
     }
 
 }

@@ -8,35 +8,44 @@
     <div class="mb-3">
         <label class="form-label" asp-for="Nome">Nome: </label>
         <input class="form-control" asp-for="Nome">
-        <span class= "text-danger"asp-validation-for="Nome"></span>
+        <span class="text-danger" asp-validation-for="Nome"></span>
     </div>
+    
 
     <div class="mb-3">
-        <label class="form-label"asp-for="DescricaoCurta">descricao curta:</label>
+        <select class="form-select" asp-for="CategoriaId" asp-items='(SelectList) ViewData["listadeCategorias"]'>
+            <option value="">Escolha uma Categoria</option>
+            <span class="text-danger" asp-validation-for="CategoriaId"></span>
+        </select>
+    </div>
+    
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="DescricaoCurta">descricao curta:</label>
         <input class="form-control" asp-for="DescricaoCurta">
         <span class="text-danger" asp-validation-for="DescricaoCurta"></span>
     </div>
 
     <div class="mb-3">
-        <label class="form-label"asp-for="DescricaoDetalhada">descricao detalhada :</label>
+        <label class="form-label" asp-for="DescricaoDetalhada">descricao detalhada :</label>
         <input class="form-control" asp-for="DescricaoDetalhada">
         <span class="text-danger" asp-validation-for="DescricaoDetalhada"></span>
     </div>
 
     <div class="mb-3">
-        <label class="form-label"asp-for="Valor">Valor :</label>
+        <label class="form-label" asp-for="Valor">Valor :</label>
         <input class="form-control" asp-for="Valor">
         <span class="text-danger" asp-validation-for="Valor"></span>
     </div>
 
 
     <div class="mb-3">
-        <label class="form-label"asp-for="DataDespesa">Data da despesa :</label>
+        <label class="form-label" asp-for="DataDespesa">Data da despesa :</label>
         <input class="form-control" asp-for="DataDespesa">
         <span class="text-danger" asp-validation-for="DataDespesa"></span>
     </div>
 
-    <button class="btn btn-primary">Salvar</button> 
+    <button class="btn btn-primary">Salvar</button>
     <a asp-action="List" asp-controller="Categoria" class="btn btn-secondary">Voltar</a>
 
 </Form>
