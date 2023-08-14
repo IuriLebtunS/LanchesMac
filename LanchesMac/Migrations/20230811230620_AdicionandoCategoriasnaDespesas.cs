@@ -5,7 +5,7 @@
 namespace LanchesMac.Migrations
 {
     /// <inheritdoc />
-    public partial class AdicionandoCategoriasnaDespesa : Migration
+    public partial class AdicionandoCategoriasnaDespesas : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

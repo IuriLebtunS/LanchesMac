@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace LanchesMac.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230811215605_AdicionandoCategoriasnaDespesa")]
-    partial class AdicionandoCategoriasnaDespesa
+    [Migration("20230811230620_AdicionandoCategoriasnaDespesas")]
+    partial class AdicionandoCategoriasnaDespesas
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
