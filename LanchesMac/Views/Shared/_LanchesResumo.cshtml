@@ -1,0 +1,15 @@
+@model Lanche
+
+<div>
+    <br>
+    <h4>@Model.Nome</h4>
+    <p><img src="@Model.ImagemUrl" height="200" width="200"></p>
+    <h3>Preço: @Model.Preco.ToString("c")</h3>
+    <br>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a asp-action="Edit" asp-route-Id="@Model.LancheId" class="btn btn-success">Editar</a>
+        <a asp-action="Delete" asp-route-Id="@Model.LancheId" class="btn btn-danger">Apagar</a>
+    </div>
+
+</div>

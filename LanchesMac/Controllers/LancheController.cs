@@ -4,6 +4,7 @@ using System.Diagnostics;
 using LanchesMac.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using LanchesMac.ViewModels;
 
 public class LancheController : Controller
 {
@@ -16,9 +17,16 @@ public class LancheController : Controller
 
     public async Task<IActionResult> List()
     {
-        var lanches = await _context.Lanches.ToListAsync();
-        return View(lanches);
+        //var lanches = await _context.Lanches.ToListAsync();
+        //return View(lanches);
+        var LancheListViewModel = new LancheListViewModel();
+        LancheListViewModel.Lanches = await _context.Lanches.ToListAsync();
+        LancheListViewModel.CategoriaAtual = "Categoria Atual";
+
+        return View(LancheListViewModel);
+
     }
+
 
     public async Task<IActionResult> Create()
     {

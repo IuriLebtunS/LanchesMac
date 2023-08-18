@@ -1,22 +1,10 @@
-@model List<Lanche>
+@model LancheListViewModel
 
-<h1>Nossos Lanches</h1>
+<h1>@Model.CategoriaAtual</h1>
 <hr>
 
-@foreach (var lanche in Model)
+@foreach (var lanche in Model.Lanches)
 {
-    <div>
-        <br>
-        <h4>@lanche.Nome</h4>
-        <p><img src="@lanche.ImagemUrl" height="200" width="200"></p>
-        <h3>Preço: @lanche.Preco.ToString("c")</h3>
-        <br>
-
-         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a asp-action="Edit" asp-route-Id="@lanche.LancheId" class="btn btn-success">Editar</a>
-            <a asp-action="Delete" asp-route-Id="@lanche.LancheId" class="btn btn-danger">Apagar</a>
-        </div>
-       
-    </div>
+   <partial name ="_LanchesResumo" for = "@lanche"/>
 }
 
